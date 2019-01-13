@@ -10,12 +10,10 @@ for(i = 0;i < sentence.length;i++){
     if(sentence[i] === ","){
 
         commas = commas + 1;
-        console.log(commas);
 
     } else if(sentence[i] === "."){
 
        dots = dots + 1;
-       console.log(dots);
 
     }
 }
@@ -39,8 +37,24 @@ for(i = 0;i < dots;i++){
 For example:
     "I love cats" -> "I","love","cats"
 */ 
-let sentence_words = sentence.split(" ");
 
+let wordsOnly = sentence.split(" ");
 
-console.log(sentence_words);
+let aux1;
+let aux2;
+let wordCounter;
+
+for(i = 0;i < wordsOnly.length;i++){
+    aux1 = wordsOnly[i];
+    wordCounter = 0;
+    for(w = 0;w < wordsOnly.length;w++){
+        aux2 = wordsOnly[w];
+        if(wordsOnly[w] === wordsOnly[i]){
+            wordCounter = wordCounter + 1;
+        }
+    }
+    console.log(`The word ${wordsOnly[i].toUpperCase()} occurred ${wordCounter} times.`);
+}
+
+console.log(wordsOnly);
 
